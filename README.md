@@ -1,4 +1,4 @@
-:warning: Doesn't actually work once I converted it to VSCode workspaces, to see the code that works see below.
+> :warning: Doesn't actually work once I converted it to VSCode workspaces, to see the code that works see below.
 
 # Talk of the Town Login
 Have you ever had trouble logging into Talk of the Town login at 135th and Nall? No need to hit the authentication page! Assuming you connect to the 5GHz SSID this will read your mac address and complete the authentication request.
