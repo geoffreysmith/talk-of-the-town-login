@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "name": "talk-of-the-town-login",
+  "version": "1.0.0",
+  "description": "Logging into Talk of the Town",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geoffreysmith/talk-of-the-town-login.git"
+  },
+  "keywords": [
+    "talkofthetown"
+  ],
+  "author": "Geoffrey Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geoffreysmith/talk-of-the-town-login/issues"
+  },
+  "homepage": "https://github.com/geoffreysmith/talk-of-the-town-login#readme",
+  "dependencies": {
+    "curl-request": "^1.1.1",
+    "is-online": "^8.2.1",
+    "node-wifi": "^2.0.12"
+  }
+}
