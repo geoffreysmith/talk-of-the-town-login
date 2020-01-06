@@ -20,11 +20,11 @@ The problem with (2) is that Windows, and I'm assuming Android/OSX, accounts for
 
 The problem is that this test is not 100% accurate as either your IP address changes and the router deals with it incorrectly, or I believe but not positive in Meraki's case, it appears to be looking at the OS for marketing purposes, Broadcom identifies itself as Apple, it assumes Apple and then gets confused that browser requests indicate Windows in the headers. As staff at restaurants do not seem to have strong desire to help me in debugging the problem L7 gateway connection issues I was forced to figure out the solution on my own.
 
-In any case, I found that in 100% of cases that once I downgraded from the bad Broadcom drivers, forcing a new "session" on the router by posting my mac address, ip address and headers used on a successful attempt worked. I have often have both changing and I doubt most people have this problem. It all comes down to a simple curl statement:
+In any case, I found that in 100% of cases that once I downgraded from the bad Broadcom drivers, forcing a new "session" on the router by posting my mac address, ip address and headers used on a successful attempt worked. It all comes down to a simple curl statement:
 
 ```bash
 curl -d '{"macAddress":"<your mac address>","ipAddress":"<ip address assigned by router>","password":"<password everyone knows/sometimes other variable if there's no password but a "Continue" button which is effectively the same thing as a password that everyone knows>"}'-H "X-JNAP-Action: http://cisco.com/jnap/guestnetwork/Authenticate" -H "X-Requested-With: XMLHttpRequest" -H "Content-Type: application/json; charset=UTF-8" -X POST http://<cisco usually the gateway, not always>:10080/JNAP/
 ```
-The headers are also variable, but I found that luckily nearly everyone has some sort of AP point with a Cisco image installed so usually hitting the gateway IP address will redirect you to the login page and then it is a matter of capturing the data in the POST. There's no real token authentication, it appears that your IP/Mac are registered as okay in a table on the router somewhere.
+The headers are also variable, but I found that luckily nearly everyone has some sort of AP point with a Cisco image installed so usually hitting the gateway IP address will redirect you to the login page and then it is a matter of capturing the data in the POST. There's no real token authentication, it appears that your IP/mac address are registered as okay in a table on the router somewhere.
 
 > N.B. RFC 7710 is supposed to standardize this by returning a URI for the splash page upon the DHCP "handshake" but I guess you'd have to run tcpdump or something to capture that at a lower level.
