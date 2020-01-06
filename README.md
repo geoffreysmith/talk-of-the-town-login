@@ -12,7 +12,7 @@ Have you ever had trouble logging into Talk of the Town login at 135th and Nall?
 ## Why
 Running Windows 10 on a late edition MacBook Pro with Broadcom drivers 7.77.110.0 (2019-10-10) kills Internet connections on certain [captive portal](https://en.wikipedia.org/wiki/Captive_portal) routers. The solution is [here](https://myitengineer.com/windows-10-wifi-connected-but-no-internet-macbook-with-bootcamp/) and to rollback drivers. Specifically I found the issue to be worse on Cisco Meraki MR APs but all routers with captive portals were slow, and impossible to connect to on 5GHz if that was the only band available. The process of logging into a restaurant/bar/hotel is usually this on Windows/OS X:
 
-1. Connect to the Wifi network (this is *a priori* you need at some point to tell the computer which to connect to, if you're at a low poitn in your life and at a strip mall with a Hooter's and a Buffalo Wild Wings, no matter what you'll need to tell it which one you want).
+1. Connect to the Wifi network (this is *a priori* you need at some point to tell the computer which to connect to, if you're at a low point in your life and at a strip mall with a Hooter's and a Buffalo Wild Wings, no matter what you'll need to tell it which one you want).
 2. Magic happens in a million different ways, see the Wikipedia article, but luckily in the United States corporate chains standardize technology or if not corporate, the ISP provides a standard AP. In any case while there might be a million ways for captive portals/splash pages to authenticate you, in reality it is pretty standardized.
 3. Internet works as long as your "token" (IP and mac address combination) is deemed valid before you have to reauthenticate.
 
